@@ -4,16 +4,24 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Name | <%= title %></title>
   </head>
   <body>
     <h1>HOWDY</h1>
     <a href="/">Blogs</a>
     <a href="/about"> About</a>
-    <a href="./blogs/create"></a>
+    <a href="./blogs/create"> new blog</a>
 
     <div class="blogs content">
       <h2>BLOGS</h2>
+      <% if (blogs.length > 0) {%> <% blogs.forEach(blog => { %>
+      <h3 class="title"><%=blog.title %></h3>
+      <p class="snippet"><%=blog.snippet %></p>
+
+      <% })%> <%} else { %>
+      <h1>No blogs :(</h1>
+
+      <%} %>
     </div>
   </body>
 </html>
